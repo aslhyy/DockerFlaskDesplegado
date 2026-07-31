@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Docker Compose</title>
+</head>
+
+<body>
+    <h1>Frontend funcionando</h1>
+
+    <p id="respuesta">Consultando el Backend...</p>
+
+    <script>
+        fetch("http://localhost:5051/api")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("respuesta").textContent = data.mensaje;
+            })
+            .catch(error => {
+                document.getElementById("respuesta").textContent =
+                    "No fue posible conectar con el Backend";
+                console.error(error);
+            });
+    </script>
+
+</body>
+
+</html>
