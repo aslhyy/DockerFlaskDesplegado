@@ -34,8 +34,7 @@ services:
         retries: 3
 
     backend:
-      build:
-        context: ./backend
+      image: 'aslhyy/proyecto-compose-backend:latest'
       container_name: proyecto-backend
       restart: unless-stopped
       ports:
