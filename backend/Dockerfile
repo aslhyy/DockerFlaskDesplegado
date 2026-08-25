@@ -2,11 +2,12 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# Actualiza las herramientas de empaquetado a versiones seguras y limpia la caché
+# Forzar actualización de librerías vulnerables en el entorno global
 RUN pip install --no-cache-dir --upgrade pip "setuptools>=78.1.1" "msgpack>=1.2.1" wheel
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# --ignore-installed obliga a pip a sobreescribir cualquier paquete previo
+RUN pip install --no-cache-dir --ignore-installed -r requirements.txt
 
 COPY . .
 
