@@ -29,7 +29,7 @@ jobs:
 
       - name: Escanear contenedor con trivy
         uses: aquasecurity/trivy-action@master
-        whit:
+        with:
           image-ref: 'aslhyy/proyecto-compose-backend:latest'
           format: 'table'
           exit-code: '1' # Si encuentra alguna falla, rompe la ejecución
