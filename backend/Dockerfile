@@ -1,12 +1,12 @@
-# Cambiar de python:3.8-slim-buster a python:3.12-slim
 FROM python:3.12-slim
 
 WORKDIR /app
 
-# Copiar e instalar dependencias
+# Actualiza las herramientas de empaquetado a versiones seguras y limpia la caché
+RUN pip install --no-cache-dir --upgrade pip "setuptools>=78.1.1" "msgpack>=1.2.1" wheel
+
 COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
-    pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
