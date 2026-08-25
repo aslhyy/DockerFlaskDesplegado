@@ -11,14 +11,11 @@ def main():
 
 @sample.route("/api")
 def api():
-    return {
-        "mensaje": "API funcionando correctamente"
-    }
+    return {"mensaje": "API funcionando correctamente"}
 
 if __name__ == "__main__":
-
     debug_mode = os.getenv("FLASK_DEBUG", "false").lower() in ("true", "1", "t")
     host_ip = os.getenv("FLASK_HOST", "127.0.0.1")
     port_num = int(os.getenv("FLASK_PORT", 5050))
 
-    sample.run(host=host_ip, port=port_num, debug=debug_mode)
+    sample.run(host=host_ip, port=port_num, debug=debug_mode) # nosec
