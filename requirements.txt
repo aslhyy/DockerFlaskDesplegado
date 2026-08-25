@@ -2,3 +2,4 @@ pytest
 Flask
 PyMySQL
 gunicorn
+Flask-Cors
