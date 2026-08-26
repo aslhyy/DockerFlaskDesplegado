@@ -1,3 +1,5 @@
-Flask
-PyMySQL
-Flask-Cors
+Flask>=3.1.0
+flask-cors>=6.0.0
+gunicorn>=21.2.0
+setuptools>=78.1.1
+msgpack>=1.2.1
